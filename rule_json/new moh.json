@@ -1,0 +1,26 @@
+{
+    "data": {
+        "generic": {
+            "advasdbsfadb": [
+                "discharge summary"
+            ],
+            "dsbsabbd": [
+                "discharge summary"
+            ]
+        },
+        "lab report": {
+            "dbsadbv": [
+                "generic",
+                "lab report"
+            ],
+            "sdbsdbdf": [
+                "generic",
+                "lab report"
+            ]
+        }
+    },
+    "ref_id": "5aa791ea-5e4a-4360-a86c-977acc644880",
+    "rule_name": "new moh",
+    "rule_status": "active",
+    "rule_created": "26/03/2024 05:54:33"
+}

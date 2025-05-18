@@ -1,0 +1,458 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="127">
+            <item index="0" class="java.lang.String" itemvalue="jinja2" />
+            <item index="1" class="java.lang.String" itemvalue="tzlocal" />
+            <item index="2" class="java.lang.String" itemvalue="apscheduler" />
+            <item index="3" class="java.lang.String" itemvalue="colorhash" />
+            <item index="4" class="java.lang.String" itemvalue="flask_migrate" />
+            <item index="5" class="java.lang.String" itemvalue="email_validator" />
+            <item index="6" class="java.lang.String" itemvalue="python-decouple" />
+            <item index="7" class="java.lang.String" itemvalue="flask_sqlalchemy" />
+            <item index="8" class="java.lang.String" itemvalue="args" />
+            <item index="9" class="java.lang.String" itemvalue="pandas" />
+            <item index="10" class="java.lang.String" itemvalue="tflearn" />
+            <item index="11" class="java.lang.String" itemvalue="scipy" />
+            <item index="12" class="java.lang.String" itemvalue="Flask-Cors" />
+            <item index="13" class="java.lang.String" itemvalue="numpydoc" />
+            <item index="14" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="15" class="java.lang.String" itemvalue="numpy" />
+            <item index="16" class="java.lang.String" itemvalue="gunicorn" />
+            <item index="17" class="java.lang.String" itemvalue="Jinja2" />
+            <item index="18" class="java.lang.String" itemvalue="Flask" />
+            <item index="19" class="java.lang.String" itemvalue="PyJWT" />
+            <item index="20" class="java.lang.String" itemvalue="greenlet" />
+            <item index="21" class="java.lang.String" itemvalue="zbar-py" />
+            <item index="22" class="java.lang.String" itemvalue="EasyProcess" />
+            <item index="23" class="java.lang.String" itemvalue="pyunpack" />
+            <item index="24" class="java.lang.String" itemvalue="PyYAML" />
+            <item index="25" class="java.lang.String" itemvalue="qrcode" />
+            <item index="26" class="java.lang.String" itemvalue="flask-cookie-decode" />
+            <item index="27" class="java.lang.String" itemvalue="ldap3" />
+            <item index="28" class="java.lang.String" itemvalue="opencv-python-headless" />
+            <item index="29" class="java.lang.String" itemvalue="python-magic" />
+            <item index="30" class="java.lang.String" itemvalue="PyNaCl" />
+            <item index="31" class="java.lang.String" itemvalue="lxml" />
+            <item index="32" class="java.lang.String" itemvalue="soupsieve" />
+            <item index="33" class="java.lang.String" itemvalue="gevent" />
+            <item index="34" class="java.lang.String" itemvalue="entrypoint2" />
+            <item index="35" class="java.lang.String" itemvalue="camelot-py" />
+            <item index="36" class="java.lang.String" itemvalue="zope.event" />
+            <item index="37" class="java.lang.String" itemvalue="smbprotocol" />
+            <item index="38" class="java.lang.String" itemvalue="xlrd" />
+            <item index="39" class="java.lang.String" itemvalue="beautifulsoup4" />
+            <item index="40" class="java.lang.String" itemvalue="botocore" />
+            <item index="41" class="java.lang.String" itemvalue="pyodbc" />
+            <item index="42" class="java.lang.String" itemvalue="opencv-python" />
+            <item index="43" class="java.lang.String" itemvalue="pypsexec" />
+            <item index="44" class="java.lang.String" itemvalue="pysftp" />
+            <item index="45" class="java.lang.String" itemvalue="aniso8601" />
+            <item index="46" class="java.lang.String" itemvalue="zope.interface" />
+            <item index="47" class="java.lang.String" itemvalue="bcrypt" />
+            <item index="48" class="java.lang.String" itemvalue="crypto" />
+            <item index="49" class="java.lang.String" itemvalue="Naked" />
+            <item index="50" class="java.lang.String" itemvalue="sortedcontainers" />
+            <item index="51" class="java.lang.String" itemvalue="WTForms" />
+            <item index="52" class="java.lang.String" itemvalue="boto3" />
+            <item index="53" class="java.lang.String" itemvalue="paramiko" />
+            <item index="54" class="java.lang.String" itemvalue="pdfminer.six" />
+            <item index="55" class="java.lang.String" itemvalue="regex" />
+            <item index="56" class="java.lang.String" itemvalue="pdf2image" />
+            <item index="57" class="java.lang.String" itemvalue="pyspnego" />
+            <item index="58" class="java.lang.String" itemvalue="pycryptodome" />
+            <item index="59" class="java.lang.String" itemvalue="pytz" />
+            <item index="60" class="java.lang.String" itemvalue="openpyxl" />
+            <item index="61" class="java.lang.String" itemvalue="Pillow" />
+            <item index="62" class="java.lang.String" itemvalue="shellescape" />
+            <item index="63" class="java.lang.String" itemvalue="py7zr" />
+            <item index="64" class="java.lang.String" itemvalue="wand" />
+            <item index="65" class="java.lang.String" itemvalue="pytesseract" />
+            <item index="66" class="java.lang.String" itemvalue="matplotlib" />
+            <item index="67" class="java.lang.String" itemvalue="sqlalchemy" />
+            <item index="68" class="java.lang.String" itemvalue="ruamel-yaml" />
+            <item index="69" class="java.lang.String" itemvalue="conda" />
+            <item index="70" class="java.lang.String" itemvalue="MarkupSafe" />
+            <item index="71" class="java.lang.String" itemvalue="itsdangerous" />
+            <item index="72" class="java.lang.String" itemvalue="click" />
+            <item index="73" class="java.lang.String" itemvalue="pdftotext" />
+            <item index="74" class="java.lang.String" itemvalue="tensorflow" />
+            <item index="75" class="java.lang.String" itemvalue="pyaml" />
+            <item index="76" class="java.lang.String" itemvalue="python-dotenv" />
+            <item index="77" class="java.lang.String" itemvalue="ibm-watson" />
+            <item index="78" class="java.lang.String" itemvalue="ipaddress" />
+            <item index="79" class="java.lang.String" itemvalue="pusher" />
+            <item index="80" class="java.lang.String" itemvalue="six" />
+            <item index="81" class="java.lang.String" itemvalue="asn1crypto" />
+            <item index="82" class="java.lang.String" itemvalue="cffi" />
+            <item index="83" class="java.lang.String" itemvalue="cryptography" />
+            <item index="84" class="java.lang.String" itemvalue="ndg-httpsclient" />
+            <item index="85" class="java.lang.String" itemvalue="pyasn1" />
+            <item index="86" class="java.lang.String" itemvalue="pycparser" />
+            <item index="87" class="java.lang.String" itemvalue="requests" />
+            <item index="88" class="java.lang.String" itemvalue="chardet" />
+            <item index="89" class="java.lang.String" itemvalue="pyOpenSSL" />
+            <item index="90" class="java.lang.String" itemvalue="certifi" />
+            <item index="91" class="java.lang.String" itemvalue="urllib3" />
+            <item index="92" class="java.lang.String" itemvalue="enum34" />
+            <item index="93" class="java.lang.String" itemvalue="idna" />
+            <item index="94" class="java.lang.String" itemvalue="cssselect2" />
+            <item index="95" class="java.lang.String" itemvalue="cairocffi" />
+            <item index="96" class="java.lang.String" itemvalue="SQLAlchemy" />
+            <item index="97" class="java.lang.String" itemvalue="defusedxml" />
+            <item index="98" class="java.lang.String" itemvalue="Pyphen" />
+            <item index="99" class="java.lang.String" itemvalue="tinycss2" />
+            <item index="100" class="java.lang.String" itemvalue="Flask-SQLAlchemy" />
+            <item index="101" class="java.lang.String" itemvalue="CairoSVG" />
+            <item index="102" class="java.lang.String" itemvalue="WeasyPrint" />
+            <item index="103" class="java.lang.String" itemvalue="Flask-Admin" />
+            <item index="104" class="java.lang.String" itemvalue="Flask-Security" />
+            <item index="105" class="java.lang.String" itemvalue="Flask-Mail" />
+            <item index="106" class="java.lang.String" itemvalue="Flask-Principal" />
+            <item index="107" class="java.lang.String" itemvalue="Flask-WTF" />
+            <item index="108" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="109" class="java.lang.String" itemvalue="psycopg2-binary" />
+            <item index="110" class="java.lang.String" itemvalue="Click" />
+            <item index="111" class="java.lang.String" itemvalue="Flask-Login" />
+            <item index="112" class="java.lang.String" itemvalue="passlib" />
+            <item index="113" class="java.lang.String" itemvalue="joblib" />
+            <item index="114" class="java.lang.String" itemvalue="scikit-learn" />
+            <item index="115" class="java.lang.String" itemvalue="prettytable" />
+            <item index="116" class="java.lang.String" itemvalue="scikit_learn" />
+            <item index="117" class="java.lang.String" itemvalue="pyparsing" />
+            <item index="118" class="java.lang.String" itemvalue="opencv_python" />
+            <item index="119" class="java.lang.String" itemvalue="pytorch_lightning" />
+            <item index="120" class="java.lang.String" itemvalue="thop" />
+            <item index="121" class="java.lang.String" itemvalue="py2app" />
+            <item index="122" class="java.lang.String" itemvalue="pkg-resources" />
+            <item index="123" class="java.lang.String" itemvalue="jpegio" />
+            <item index="124" class="java.lang.String" itemvalue="cython" />
+            <item index="125" class="java.lang.String" itemvalue="Flask-Bootstrap" />
+            <item index="126" class="java.lang.String" itemvalue="simplejson" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+          <option value="W29" />
+          <option value="E501" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

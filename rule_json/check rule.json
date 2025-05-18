@@ -1,0 +1,45 @@
+{
+    "data": {
+        "generic": {
+            "patient name": 
+                [
+                    "discharge summary",
+                    "lab report"
+                ]
+            
+        },
+        "discharge summary": {
+            "present diagnosis": 
+                [
+                    "pharmacy bill",
+                    "pre auth"
+                ],
+              
+            
+            "existing diagnosis": 
+                [
+                    "pharmacy bill",
+                    "pre auth"
+                ],
+               
+            
+            "sacavasdvdv": 
+                [
+                    "pharmacy bill",
+                    "pre auth"
+                ],
+               
+    
+            "new data": 
+                [
+                    "pharmacy bill",
+                    "pre auth"
+                ]
+               
+        }
+    },
+    "ref_id": "2e49500e-3b13-4515-991c-d3c62e1f48ae",
+    "rule_name": "check rule",
+    "rule_status": "active",
+    "rule_created": "29/03/2024 01:35:43"
+}

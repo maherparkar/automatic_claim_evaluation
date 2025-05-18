@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iAssist innovations Labs</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Source Sans Pro", arial;
+        }
+
+        html {
+            height: 100%;
+            font-family: "Source Sans Pro", arial;
+            color: #25344B;
+        }
+
+        body {
+            background: #616E81;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+        }
+
+        h1 {
+            font-weight: 400;
+            padding: 0;
+            margin: 0;
+        }
+
+        h2 {
+            font-weight: 600;
+            color: #25344B;
+            font-size: 18px;
+        }
+
+        .modal {
+            background: #fff;
+            width: 760px;
+            border-radius: 4px;
+            box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.4);
+            padding: 24px;
+        }
+
+        .user-group {
+            border: 1px solid #B3B7BE;
+            padding: 16px;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 16px;
+            color: #616E81;
+        }
+
+        .rule {
+            display: flex;
+            margin: 0 0 16px 0;
+        }
+
+        .select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-size: 16px;
+            color: #25344B;
+            background: #fff;
+            border: 1px solid #B3B7BE;
+            border-radius: 4px;
+            padding: 0 48px 0 8px;
+            height: 32px;
+            margin: 0 16px 0 0;
+            outline: 0;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/ic-med_carretdown.svg);
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 12px;
+            flex-grow: 0;
+        }
+
+        .select:focus {
+            border: 1px solid #007DB6;
+        }
+
+        .textarea {
+            flex-grow: 1;
+            margin: 0 16px 0 0;
+        }
+
+        .textarea textarea {
+            display: inherit;
+            width: 100%;
+            resize: none;
+            font-size: 16px;
+            padding: 8px 12px 0;
+            height: 32px;
+            margin: 0;
+            border-radius: 4px;
+            border: 1px solid #B3B7BE;
+            color: #25344B;
+            outline: none;
+        }
+
+        .textarea textarea:focus {
+            border: 1px solid #007DB6;
+        }
+
+        .delete {
+            width: 20px;
+            display: inline-block;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_remcircle_icon.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .button-add {
+            border: 1px dashed #B3B7BE;
+            padding: 8px 16px 8px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #25344B;
+            border-radius: 4px;
+            background: transparent;
+            color: #007DB6;
+            cursor: pointer;
+            outline: 0;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_addcircle_icon.svg);
+            background-repeat: no-repeat;
+            background-position: 8px center;
+            background-size: 16px 16px;
+        }
+
+        .add-group {
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_personmulti_icon.svg);
+            width: 100%;
+            text-align: left;
+        }
+
+        .add-user {
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_person_icon.svg);
+        }
+
+        .space {
+            height: 24px;
+        }
+
+        .button {
+            font-size: 18px;
+            background: transparent;
+            padding: 8px 16px;
+            min-width: 120px;
+            color: #616E81;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .button-primary {
+            background: #007DB6;
+            color: #fff;
+        }
+
+        .button-row {
+            text-align: right;
+        }
+
+        .or {
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .hide-set {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<aside class="modal">
+    <h1>Add custom rules</h1>
+    <h2>User groups</h2>
+    <div id="main_parent">
+        <section class="user-group" id="user_group_1">
+
+
+            <p>Select Type of Document:</p>
+
+            <select name="" id="doc_type_1" class="select">
+                <option value="discharge summary">Discharge Summary</option>
+                <option value="pharmacy bill">Pharmacy Bill</option>
+                <option value="lab report">Lab Report</option>
+                <option value="pre auth">Pre Auth</option>
+                <option value="bills">Bills</option>
+                <option value="policy">Policy</option>
+            </select>
+            <div class="space"></div>
+            <div id="rule_create_1">
+                <div class="rule" name="rule" id="rule_1_1">
+                    <div class="textarea">
+                        <textarea name="" id="data_1_1"></textarea>
+                    </div>
+                    <select name="" id="data_type_1_1" class="select">
+                        <option value="str">String</option>
+                        <option value="list">List</option>
+                    </select>
+
+                    <div class="delete" id="del_1_1" onclick="delete_rule(this.id)"></div>
+                </div>
+            </div>
+
+            <button id="rule_create_btn_1" class="button-add" onclick="add_cond(this.id)">Add Condition</button>
+
+
+        </section>
+    </div>
+    <button class="button-add add-group" onclick="add_group()">Add another group of users</button>
+
+
+</aside>
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAmK6i6Uo96yMzdJ0y_bDG9qXeMEFviwdM",
+      authDomain: "configurator-94278.firebaseapp.com",
+      projectId: "configurator-94278",
+      storageBucket: "configurator-94278.appspot.com",
+      messagingSenderId: "1058344132866",
+      appId: "1:1058344132866:web:e39872d1e18fb6183e621b",
+      measurementId: "G-0BKV6LTGFG"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function add_group() {
+        var sec_len = document.getElementsByClassName("user-group").length + 1;
+        var main_parent = document.getElementById('main_parent');
+        var sect = document.createElement('section');
+        sect.className = "user-group";
+        sect.id = "user_group_" + String(sec_len);
+        var p1 = document.createElement('p');
+        p1.innerText = "Select Type of Document:"
+        var array = ["Discharge Summary", "Pharmacy Bill", "Lab Report", "Pre Auth", "Bills", "Policy"];
+        var array_val = ["discharge summary", "pharmacy bill", "lab report", "pre auth", "bills", "policy"];
+        var selectList = document.createElement("select");
+        selectList.className = "select";
+        selectList.id = "data_" + String(sec_len) + "_1";
+        for (var i = 0; i < array.length; i++) {
+            var option = document.createElement("option");
+            option.value = array_val[i];
+            option.text = array[i];
+            selectList.appendChild(option);
+        }
+        var div = document.createElement('div');
+        div.className = "space";
+        var mn_div = document.createElement('div');
+        mn_div.id = "rule_create_" + String(sec_len);
+        var div1 = document.createElement('div');
+        div1.name = "rule";
+        div1.className = "rule";
+        div1.id = "rule_" + String(sec_len) + "_1";
+        var div2 = document.createElement('div');
+        div2.className = "textarea";
+        var textarea1 = document.createElement('textarea');
+        textarea1.id = "data_" + String(sec_len) + "_1";
+        div2.appendChild(textarea1);
+        var array1 = ["String", "List"];
+        var array_val1 = ["str", "list"];
+        var selectList1 = document.createElement("select");
+        selectList1.className = "select";
+        selectList1.id = "data_" + String(sec_len) + "_1";
+        for (var i = 0; i < array1.length; i++) {
+            var option1 = document.createElement("option");
+            option1.value = array_val1[i];
+            option1.text = array1[i];
+            selectList1.appendChild(option1);
+        }
+        var del_btn = document.createElement('div');
+        del_btn.className = "delete";
+        del_btn.id = "del_" + String(sec_len) + "_1";
+        // del_btn.onclick = delete_rule(this.id);
+        del_btn.setAttribute("onclick", "delete_rule(this.id)");
+        div1.appendChild(div2);
+        div1.appendChild(selectList1);
+        div1.appendChild(del_btn);
+        mn_div.appendChild(div1);
+        var btn = document.createElement('button');
+        btn.className = "button-add";
+        btn.id = "rule_create_btn_" + String(sec_len);
+        btn.setAttribute("onclick", "add_cond(this.id)");
+        btn.innerText = "Add Condition";
+        sect.appendChild(p1);
+        sect.appendChild(selectList);
+        sect.appendChild(div);
+        sect.appendChild(mn_div);
+        sect.appendChild(btn);
+        main_parent.appendChild(sect);
+
+    }
+
+    function delete_rule(my_id) {
+        console.log(my_id)
+        var rule_id_del = String(my_id).replace("del", "rule");
+        console.log("rule_id_del", rule_id_del);
+        var parent_tag = "rule_create_" + String(my_id).split("_")[1];
+        d = document;
+        var ele = d.getElementById(rule_id_del);
+        var parentEle = d.getElementById(parent_tag);
+        parentEle.removeChild(ele);
+    }
+
+    function add_cond(cond_id) {
+        console.log(cond_id);
+        var parent_div = String(cond_id).replace("_btn", "");
+        console.log("parent_div",parent_div);
+        var rule_id = String(cond_id).replace("rule_create_btn_", "");
+        d = document.getElementById(parent_div);
+        var ele_len = d.getElementsByClassName("rule").length + 1;
+        var div1 = document.createElement('div');
+        div1.name = "rule";
+        div1.className = "rule";
+        div1.id = "rule_" + String(rule_id) + "_" + String(ele_len);
+        var div2 = document.createElement('div');
+        div2.className = "textarea";
+        var textarea1 = document.createElement('textarea');
+        textarea1.id = "data_" + String(rule_id) + "_" + String(ele_len);
+        div2.appendChild(textarea1);
+        var array = ["String", "List"];
+        var array_val = ["str", "list"];
+        var selectList = document.createElement("select");
+        selectList.className = "select";
+        selectList.id = "data_" + String(rule_id) + "_" + String(ele_len);
+        for (var i = 0; i < array.length; i++) {
+            var option = document.createElement("option");
+            option.value = array_val[i];
+            option.text = array[i];
+            selectList.appendChild(option);
+        }
+        var del_btn = document.createElement('div');
+        del_btn.className = "delete";
+        del_btn.id = "del_" + String(rule_id) + "_" + String(ele_len);
+        // del_btn.onclick = delete_rule(this.id);
+        del_btn.setAttribute("onclick", "delete_rule(this.id)");
+        div1.appendChild(div2);
+        div1.appendChild(selectList);
+        div1.appendChild(del_btn);
+        document.getElementById(parent_div).appendChild(div1);
+    }
+
+
+</script>
+</html>

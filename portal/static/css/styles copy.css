@@ -1,0 +1,323 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    /* background-color: #FFFFF0; */
+    background-image: url('../../try.jpg'); /* Corrected background-image syntax */
+    background-size: cover;
+}
+
+header {
+    background-image: url('../../try.jpg');
+    background-size: cover;
+    /* background-color: #ff8c00; */
+    color: #fff;
+    text-align: center;
+    /* padding: 20px 0; */
+    margin-bottom: 5%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    
+}
+
+header h1 {
+    font-size: 2rem; /* Increase the font size for the header text */
+    margin: 0;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    text-align: center;
+    margin: 0 auto;
+    padding: 10%;
+    /* background-color: #FFFFF0; */
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 5px;
+    /* max-width: 100%; */
+    flex-direction: column; /* Stack elements vertically */
+    /* background-image: url('../../try.jpg');  */
+    /* background-size: cover;  */
+    /* background-repeat: no-repeat; */
+}
+
+
+h1 {
+    margin: 0;
+}
+
+.file-label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px; /* Increase the margin for more spacing */
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button {
+    background-color: rgb(239, 124, 0);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px; /* Rounded corners for the button */
+}
+
+button:hover {
+    background-color: rgb(239, 124, 0);
+}
+
+#excelOutput {
+    margin-top: 20px;
+}
+
+
+#rfpUploadForm {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc; /* Add a border for separation */
+    border-radius: 10px; /* Round the corners of the form */
+    background-color: #fff; /* Ensure the form has a white background */
+    /* max-width: 70%; Adjust the width of the form container */
+    /* margin: 0 auto; Center the form horizontally */
+    width: 100%;
+}
+
+label.file-label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+    color: rgb(239, 124, 0); /* Match text color with button background */
+    cursor: pointer;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgb(239, 124, 0);
+    z-index: 999;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+.form-data{
+    font-size:small;
+    font-weight:bold;
+    text-align:center;
+    color:#1A2421;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.row-section{
+    gap:2%;
+}
+
+.row-section .form-data{
+    /* background-color: red; */
+    /* width: 85%; */
+    margin: 1rem 1rem 1rem 0;
+    border-radius: 5px;
+}
+
+.row-section label{
+    font-size:small;
+    /* new below */
+    display: flex; 
+    text-align: left;
+}
+
+
+.label-overlap {
+    position: relative;
+}
+
+.label-overlap label {
+    position: absolute;
+    top: -10px; /* Adjust this value to control the overlap with the input */
+    left: 10px; /* Adjust this value to control the position from the left */
+    background-color: #fff; /* Background color behind the label */
+    padding: 0 5px; /* Add padding to the label for spacing */
+}
+
+.label-overlap input {
+    padding: 9px;
+    margin-right: 10px;
+}
+
+.headerForTable{
+    color: rgb(51, 52, 141);
+    font-size: xx-large;
+}
+
+.tdClass {
+    width: 75vw;
+}
+
+@media screen and (max-width: 1920px){
+    .tdClass {
+        width: 75vw !important;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .tdClass {
+        width: 80vw !important;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .tdClass {
+        width: 85vw !important;
+    }
+}
+
+
+
+
+/* navbar  */
+
+
+
+
+
+/* download exel class */
+
+
+.downloadExcel{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 5%;
+    background-color: #D22B2B;
+
+} 
+
+.downloadExcel:hover{
+    background-color: #E30B5C !important;
+}
+
+/* download exel class */
+
+/* Add this CSS to your existing stylesheet */
+
+.navbarICICILogo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center both horizontally and vertically */
+    background: linear-gradient(to bottom, #f58220 -18%, #b02a30 127%);
+    padding: 10px;
+}
+
+
+.logo {
+    /* Keep the logo styles as they are */
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.centered-text {
+    color: #fff;
+    font-size: larger;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.text-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center both horizontally and vertically */
+}
+
+/* navbar  */
+
+
+/* filepond */
+
+
+
+
+.filepond--root {
+    border: 5px dashed #e31e24;
+    /* Stylish border for the drag and drop box */
+    border-radius: 10px;
+    background-color: #f2edf3;
+    /* Background color for the container */
+    padding: 20px;
+    cursor: pointer;
+    /* height: 76px !important; */
+}
+
+.filepond--label-action {
+    color: #333;
+    /* Dark text color for the "Drag and Drop" text */
+}
+
+.filepond--label-action[data-action="browse"] {
+    background-color: #333;
+    /* Dark background color for the "Browse" button */
+    color: #fff;
+    /* Text color for the "Browse" button */
+    border-radius: 5px;
+    padding: 10px 20px;
+    /* font-weight: bold; */
+}
+
+.filepond--credits {
+    display: none;
+    visibility: hidden;
+}
+
+
+
+/* download button */
+
+
+
+/* download button */

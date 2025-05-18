@@ -1,0 +1,52 @@
+
+{
+    "data": {
+        "discharge summary": {
+            "symptoms": "str",
+            "current diagnosis": "str",
+            "test for diagnosis": "list",
+            "medicine": "list",
+            "name": "str",
+            "age": "str",
+            "doctor name": "str",
+            "doctor id": "str",
+            "hospital name": "str",
+            "hospital address": "str",
+            "summary": "str",
+            "date of admission": "date",
+            "date of discharge": "date",
+            "previous diagnosis": "str",
+            "room type/ward": "str",
+            "past history diagnosis": "str"
+        },
+        "policy": {
+            "policy number": "str",
+            "age": "str",
+            "policy start date": "str",
+            "policy end date": "str",
+            "sum insured": "str",
+            "code": "str",
+            "insured name": "str",
+            "policy inclusion": "list",
+            "policy exclusion": "list",
+            "policy type": "str"
+        },
+        "bills": {
+            "patient name": "str",
+            "patient age": "str",
+            "patient gender": "str",
+            "bill date": "str",
+            "hospital name": "str",
+            "hospital address": "str",
+            "doctor name": "str",
+            "date of admission": "str",
+            "date of discharge": "str",
+            "room type/ward": "str"
+          }
+          
+    },
+    "ref_id": "a30a775d-78b9-4517-ac74-b72630519308",
+    "int_name": "young star ",
+    "int_status": "active",
+    "int_created": "20/12/2023 11:56:03"
+}

@@ -1,0 +1,32 @@
+{
+    "data": {
+        "generic": {
+            "patient name": [
+                "discharge summary",
+                "lab report"
+            ],
+            "patient age": [
+                "discharge summary",
+                "lab report"
+            ]
+        },
+        "discharge summary": {
+            "present diagnosis": [
+                "pharmacy bill",
+                "pre auth"
+            ],
+            "existing conditions": [
+                "pharmacy bill",
+                "pre auth"
+            ],
+            "new rie": [
+                "dischargesummary",
+                "preauth"
+            ]
+        }
+    },
+    "ref_id": "d8bcc943-67f2-4d1c-ad7a-3f04f2d6100f",
+    "rule_name": "Your rule name here",
+    "rule_status": "active",
+    "rule_created": "01/04/2024 02:11:55"
+}

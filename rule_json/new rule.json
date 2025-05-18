@@ -1,0 +1,25 @@
+{
+    "data": {
+        "generic": {
+            "": []
+        },
+        "discharge summary": {
+            "present diagnosis": [
+                "pharmacy bill",
+                "pre auth"
+            ],
+            "existing conditions": [
+                "pharmacy bill",
+                "pre auth"
+            ],
+            "acasc": [
+                "labreport",
+                "preauth"
+            ]
+        }
+    },
+    "ref_id": "6ccd2ad8-e25e-4bba-9694-8a1ce91f3480",
+    "rule_name": "new rule",
+    "rule_status": "active",
+    "rule_created": "01/04/2024 16:43:22"
+}

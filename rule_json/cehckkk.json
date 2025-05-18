@@ -1,0 +1,38 @@
+{
+    "data": {
+        "generic": {
+            "aDVDSVVDSA": [
+                "DSV",
+                "SVSDV"
+            ],
+            "SDVSDVSDV": [
+                "DSV",
+                "SVSDV"
+            ],
+            "SDVSDVSDVSD": [
+                "DSV",
+                "SVSDV"
+            ]
+        },
+        "discharge summary": {
+            "SDVSDVSDV": [
+                "generic",
+                "pharmacy bill"
+            ],
+            "cccccccccccc": [
+                "pharmacybill",
+                "labreport"
+            ]
+        },
+        "preauth": {
+            "cehkkkk": [
+                "labreport",
+                "preauth"
+            ]
+        }
+    },
+    "ref_id": "cab651a4-3770-41a1-a0c0-108cbb1fa824",
+    "rule_name": "cehckkk",
+    "rule_status": "active",
+    "rule_created": "01/04/2024 16:45:50"
+}

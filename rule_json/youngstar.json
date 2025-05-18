@@ -1,0 +1,74 @@
+{
+    "data": {
+        "generic": {
+            "Patient names are same in the following ": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ],
+            "Patient age are same in the following ": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ],
+            "Doctor names are same in the following ": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ]
+        },
+        "discharge summary": {
+            "document issuance date should be in between policy period": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ],
+            "Whether the symptoms and diagnosis are in-line?": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ],
+            "Whether the diagnosis and its test undertaken are in-line?": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ],
+            "is current diagnosis and pre existing condition  are matching": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ]
+        },
+        "policy": {
+            "check whether policy holder is aged between 18 and 65 years": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ],
+            "30 days for all new diseases and ailments, except for accidental hospitalization and maternity": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ],
+            "Coverages": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ],
+            "what is the Room type/ward": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ],
+            "whether its a reimbursement or cashless claim ": [
+                "discharge summary",
+                "bills",
+                "policy"
+            ]
+        }
+    },
+    "ref_id": "847d0c20-4ede-4c2f-8ead-799a9e55931c",
+    "rule_name": "youngstar",
+    "rule_status": "active",
+    "rule_created": "20/12/2023 14:47:59"
+}

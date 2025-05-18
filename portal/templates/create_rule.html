@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>iAssist Innovations Labs </title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/configurator/static/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/configurator/static/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/configurator/static/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/configurator/static/vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="/configurator/static/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/configurator/static/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/configurator/static/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/configurator/static/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/configurator/static/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    
+    <link rel="stylesheet"  href="/configurator/static/css/filepond.min.css">
+    <link rel="stylesheet"  href="/configurator/static/css/style.css">
+    <link rel="stylesheet"  href="/configurator/static/css/styles.css">
+    <link rel="stylesheet"  href="/configurator/static/css/filepond-plugin-image-preview.min.css">
+        
+    
+    <style>
+        .user-group {
+            border: 1px solid #B3B7BE;
+            padding: 16px;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 16px;
+            color: #616E81;
+        }
+        
+        
+        .user-group:hover{
+            background-color: #FFFAF0;
+        }
+
+        .form-control:hover{
+            background-color: #FFFAF0;
+        }
+        
+
+
+        .user-group:hover{
+            background-color: #FFFAF0;
+        }
+
+        .form-control:hover{
+            background-color: #FFFAF0;
+        }
+        
+
+        .rule {
+            display: flex;
+            margin: 0 0 16px 0;
+        }
+
+        .select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-size: 16px;
+            color: #25344B;
+            background: #fff;
+            border: 1px solid #B3B7BE;
+            border-radius: 4px;
+            padding: 0 48px 0 8px;
+            height: 32px;
+            margin: 0 16px 0 0;
+            outline: 0;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/ic-med_carretdown.svg);
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 12px;
+            flex-grow: 0;
+        }
+
+        .select:focus {
+            border: 1px solid #007DB6;
+        }
+
+        .textarea {
+            flex-grow: 1;
+            /*margin: 0 16px 0 0;*/
+        }
+
+        .textarea textarea {
+            display: inherit;
+            width: 100%;
+            resize: none;
+            font-size: 16px;
+            /*padding: 8px 12px 0;*/
+            height: 32px;
+            margin: 0;
+            border-radius: 4px;
+            border: 1px solid #B3B7BE;
+            color: #25344B;
+            outline: none;
+        }
+
+        .textarea textarea:focus {
+            border: 1px solid #007DB6;
+        }
+
+        .delete {
+            width: 20px;
+            display: inline-block;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_remcircle_icon.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .button-add {
+            border: 1px dashed #B3B7BE;
+            padding: 8px 16px 8px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #25344B;
+            border-radius: 4px;
+            background: transparent;
+            color: #007DB6;
+            cursor: pointer;
+            outline: 0;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_addcircle_icon.svg);
+            background-repeat: no-repeat;
+            background-position: 8px center;
+            background-size: 16px 16px;
+        }
+
+        .add-group {
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_personmulti_icon.svg);
+            width: 100%;
+            text-align: left;
+        }
+
+        .add-user {
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_person_icon.svg);
+        }
+
+        .space {
+            height: 24px;
+        }
+
+        .button {
+            font-size: 18px;
+            background: transparent;
+            padding: 8px 16px;
+            min-width: 120px;
+            color: #616E81;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .button-primary {
+            background: #007DB6;
+            color: #fff;
+        }
+
+        .button-row {
+            text-align: right;
+        }
+
+        .or {
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .hide-set {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet"/>
+    <style>
+        .select2-container {
+            min-width: 400px;
+        }
+
+        .select2-results__option {
+            padding-right: 20px;
+            vertical-align: middle;
+        }
+
+        .select2-results__option:before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            height: 20px;
+            width: 20px;
+            border: 2px solid #e9e9e9;
+            border-radius: 4px;
+            background-color: #fff;
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+
+        .select2-results__option[aria-selected=true]:before {
+            font-family: fontAwesome;
+            content: "\f00c";
+            color: #fff;
+            background-color: #f77750;
+            border: 0;
+            display: inline-block;
+            padding-left: 3px;
+        }
+
+        .select2-container--default .select2-results__option[aria-selected=true] {
+            background-color: #fff;
+        }
+
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background-color: #eaeaeb;
+            color: #272727;
+        }
+
+        .select2-container--default .select2-selection--multiple {
+            margin-bottom: 10px;
+        }
+
+        .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+            border-radius: 4px;
+        }
+
+        .select2-container--default.select2-container--focus .select2-selection--multiple {
+            border-color: #f77750;
+            border-width: 2px;
+        }
+
+        .select2-container--default .select2-selection--multiple {
+            border-width: 2px;
+        }
+
+        .select2-container--open .select2-dropdown--below {
+
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .select2-selection .select2-selection--multiple:after {
+            content: 'hhghgh';
+        }
+
+        /* select with icons badges single*/
+        .select-icon .select2-selection__placeholder .badge {
+            display: none;
+        }
+
+        .select-icon .placeholder {
+            /* 	display: none; */
+        }
+
+        .select-icon .select2-results__option:before,
+        .select-icon .select2-results__option[aria-selected=true]:before {
+            display: none !important;
+            /* content: "" !important; */
+        }
+
+        .select-icon .select2-search--dropdown {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+            <div class="me-3">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+            <div>
+                <a class="navbar-brand brand-logo" href="/configurator/index.html">
+                    <img src="/configurator/static/images/logo.png" alt="logo"/>
+                </a>
+                <a class="navbar-brand brand-logo-mini" href="/configurator/index.html">
+                    <img src="/configurator/static/images/logo.png" alt="logo"/>
+                </a>
+            </div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-top">
+
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-bs-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+
+
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/configurator">
+                        <i class="mdi mdi-grid-large menu-icon"></i>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/configurator/create_rule">
+                        <i class="menu-icon mdi mdi-card-text-outline"></i>
+                        <span class="menu-title">Create Rules</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/configurator/create_int">
+                        <i class="menu-icon mdi mdi-file-document"></i>
+                        <span class="menu-title">Create Interpretation</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/configurator/createPDF">
+                        <i class="menu-icon mdi mdi-file-document"></i>
+                        <span class="menu-title">Upload PDF</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/configurator/claim_details">
+                        <!-- <i class="menu-icon mdi mdi-file-document"></i> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M1 7h18v2H1zm4 4h14v2H5z"/></svg>
+                        <span class="menu-title" style="margin-left: 10px;" >Summary</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="mb-4">Create Rule</h2>
+<!--                                <div class="form-group">-->
+<!--                                    <label for="int_type">Rule Name</label>-->
+<!--                                    <select name="" id="int_type" class="select form-control" onchange="get_int_in()">-->
+<!--                                        <option>Select Interpretation</option>-->
+<!--                                        {% for name in range(ret_data['int_type']|length) %}-->
+<!--                                        <option value="{{ret_data['int_type'][name]}}">{{ret_data['int_type'][name]}}-->
+<!--                                        </option>-->
+<!--                                        {% endfor %}-->
+<!--                                    </select>-->
+<!--                                </div>-->
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Rule Name</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1"
+                                        placeholder="Rule Name" value="{{ ret_data['firestore_data']['rule_name'] | default('') }}">
+                                </div>
+                                <!-- <div style="border: 1px solid #B3B7BE;margin-bottom:2%;" >
+                                    <div class="centered-input">
+                                        <input type="file" name="myfile" id="myfile" accept="application/pdf" class="myFile" />
+                                    </div>
+                                </div>     -->
+
+                                <div id="main_parent">
+                                    <section class="user-group" id="user_group_1">
+
+
+                                        <p>Select Type of Document:</p>
+
+                                        <select name="" id="doc_type_1" class="select">
+                                            
+                                            {% for key in ret_data['firestore_data']['data'] %}
+                                                <option>{{ key }}</option>
+                                            {% endfor %}
+
+                                            <option value="generic">Generic</option>
+                                            <option value="discharge summary">Discharge Summary</option>
+                                            <option value="pharmacy bill">Pharmacy Bill</option>
+                                            <option value="lab report">Lab Report</option>
+                                            <option value="pre auth">Pre Auth</option>
+                                            <option value="bills">Bills</option>
+                                            <option value="policy">Policy</option>
+                                            <option value="indoor case papers">Indoor Case Papers(ICPs)</option>
+                                        </select>
+                                        <div class="space"></div>
+                                        <div id="rule_create_1">
+                                        <div class="rule" name="rule" id="rule_1_1">
+                                            <div class="textarea">
+                                                <textarea id="data_1_1">{% if 'firestore_data' in ret_data and 'data' in ret_data['firestore_data'] %}{% for outer_key, outer_value in ret_data['firestore_data']['data'].items() %}{% for inner_key, inner_value in outer_value.items() %}{{ inner_key|striptags|trim }}\n{% endfor %}{% endfor %}{% else %}{% endif %}</textarea>
+                                                                                    
+                                                                                        
+
+
+                                                    <!-- {% if 'firestore_data' in ret_data and 'data' in ret_data['firestore_data'] %}
+                                                    {% for outer_key, outer_value in ret_data['firestore_data']['data'].items() %}
+                                                        {% for inner_key, inner_value in outer_value.items() %}
+                                                            <textarea id="data_{{ outer_key }}_{{ inner_key }}">
+                                                                {{ inner_key|striptags|trim }}
+                                                            </textarea>
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                {% else %}
+                                                   <textarea id="data_1_1" ></textarea>
+                                                {% endif %} -->
+
+                                                    
+
+                                                </div>
+                                                <!--                                                <select name="" id="data_type_1_1" class="select">-->
+                                                <!--                                                    <option value="generic">Generic</option>-->
+                                                <!--                                                    <option value="discharge summary">Discharge Summary</option>-->
+                                                <!--                                                    <option value="pharmacy bill">Pharmacy Bill</option>-->
+                                                <!--                                                    <option value="lab report">Lab Report</option>-->
+                                                <!--                                                    <option value="pre auth">Pre Auth</option>-->
+                                                <!--                                                    <option value="bills">Bills</option>-->
+                                                <!--                                                    <option value="policy">Policy</option>-->
+                                                <!--                                                </select>-->
+
+                                                <select class="js-select2" multiple="multiple" id="data_type_1_1">
+                                                    <!-- <option selected> -->
+                                                    <!-- <option> -->
+                                                        <!-- {% for outer_key, outer_value in ret_data['firestore_data'].get('data', {}).items() %}
+                                                            {% for inner_key, inner_value in outer_value.items() %}
+                                                                {% for x, y in inner_value.items() %}    
+                                                                    {{ y }}
+                                                                {% endfor %}    
+                                                            {% endfor %}
+                                                        {% endfor %}
+                                                    </option> -->
+                                                
+                                                    <option value="generic" data-badge="">Generic</option>
+                                                    <option value="discharge summary" data-badge="">Discharge Summary</option>
+                                                    <option value="pharmacy bill" data-badge="">Pharmacy Bill</option>
+                                                    <option value="lab report" data-badge="">Lab Report</option>
+                                                    <option value="pre auth" data-badge="">Pre Auth</option>
+                                                    <option value="bills" data-badge="">Bills</option>
+                                                    <option value="policy" data-badge="">Policy</option>
+                                                    <option value="indoor case papers" data-badge="">Indoor Case Papers(ICPs)</option>
+                                                </select>
+                                                                                                
+
+                                                <div class="delete" id="del_1_1" onclick="delete_rule(this.id)"></div>
+                                            </div>
+                                        </div>
+
+                                        <button id="rule_create_btn_1" class="button-add" onclick="add_cond(this.id)">
+                                            Add Condition
+                                        </button>
+                                        
+                                        
+                                    <!-- new code -->
+
+                                    <!-- new code -->
+
+                                    </section>
+                                </div>
+                                <button class="button-add add-group mb-4" onclick="add_group()">Add another group of
+                                    users
+                                </button>
+                                <div class="row mt-4" style="margin-left: 120px;">
+                                    <!-- <div class="col-md-4"></div> -->
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-success" onclick="final_appr()"> Submit</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+
+<!-- plugins:js -->
+<script src="/configurator/static/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/configurator/static/vendors/chart.js/Chart.min.js"></script>
+<script src="/configurator/static/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="/configurator/static/vendors/progressbar.js/progressbar.min.js"></script>
+
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/configurator/static/js/off-canvas.js"></script>
+<script src="/configurator/static/js/hoverable-collapse.js"></script>
+<script src="/configurator/static/js/template.js"></script>
+<script src="/configurator/static/js/settings.js"></script>
+<script src="/configurator/static/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="/configurator/static/js/dashboard.js"></script>
+<script src="/configurator/static/js/Chart.roundedBarCharts.js"></script>
+<!-- End custom js for this page-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+<script>
+    $(".js-select2").select2({
+        closeOnSelect: false,
+        placeholder: "Document Type",
+        allowClear: true,
+        tags: true
+    });
+</script>
+<script>
+    function get_int_in() {
+        var file_name = document.getElementById('int_type').value;
+        var my_sy = [];
+        my_sy.push(file_name);
+        var js_data = JSON.stringify(my_sy);
+        $.ajax({
+            type: 'POST',
+            url: '/configurator/get_int_json',
+            data: js_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (data) {
+
+
+            }
+        });
+    }
+
+    function add_group() {
+        var sec_len = document.getElementsByClassName("user-group").length + 1;
+        var main_parent = document.getElementById('main_parent');
+        var sect = document.createElement('section');
+        sect.className = "user-group";
+        sect.id = "user_group_" + String(sec_len);
+        var p1 = document.createElement('p');
+        p1.innerText = "Select Type of Document:"
+        var array = ["Generic", "Discharge Summary", "Pharmacy Bill", "Lab Report", "Pre Auth", "Bills", "Policy"];
+        var array_val = ["generic", "discharge summary", "pharmacy bill", "lab report", "pre auth", "bills", "policy"];
+        var selectList = document.createElement("select");
+        selectList.className = "select";
+        selectList.id = "doc_type_" + String(sec_len);
+        for (var i = 0; i < array.length; i++) {
+            var option = document.createElement("option");
+            option.value = array_val[i];
+            option.text = array[i];
+            selectList.appendChild(option);
+        }
+
+        var div = document.createElement('div');
+        div.className = "space";
+        var mn_div = document.createElement('div');
+        mn_div.id = "rule_create_" + String(sec_len);
+        var div1 = document.createElement('div');
+        div1.name = "rule";
+        div1.className = "rule";
+        div1.id = "rule_" + String(sec_len) + "_1";
+        var div2 = document.createElement('div');
+        div2.className = "textarea";
+        var textarea1 = document.createElement('textarea');
+        textarea1.id = "data_" + String(sec_len) + "_1";
+        div2.appendChild(textarea1);
+        var array1 = ["Generic", "Discharge Summary", "Pharmacy Bill", "Lab Report", "Pre Auth", "Bills", "Policy"];
+        var array_val1 = ["generic", "discharge summary", "pharmacy bill", "lab report", "pre auth", "bills", "policy"];
+        var selectList1 = document.createElement("select");
+        selectList1.className = "js-select2";
+        // selectList1.multiple = "multiple";
+        selectList1.setAttribute("multiple", "multiple");
+        selectList1.id = "data_type_" + String(sec_len) + "_1";
+        for (var i = 0; i < array1.length; i++) {
+            var option1 = document.createElement("option");
+            option1.value = array_val1[i];
+            option1.text = array1[i];
+            selectList1.appendChild(option1);
+        }
+        // $('.js-select2').select2();
+        $(document).ready(function () {
+            $(".js-select2").select2({
+                closeOnSelect: false,
+                placeholder: "Document Type",
+                allowClear: true,
+                tags: true
+            });
+        });
+        var del_btn = document.createElement('div');
+        del_btn.className = "delete";
+        del_btn.id = "del_" + String(sec_len) + "_1";
+        // del_btn.onclick = delete_rule(this.id);
+        del_btn.setAttribute("onclick", "delete_rule(this.id)");
+        div1.appendChild(div2);
+        div1.appendChild(selectList1);
+        div1.appendChild(del_btn);
+        mn_div.appendChild(div1);
+        var btn = document.createElement('button');
+        btn.className = "button-add";
+        btn.id = "rule_create_btn_" + String(sec_len);
+        btn.setAttribute("onclick", "add_cond(this.id)");
+        btn.innerText = "Add Condition";
+        sect.appendChild(p1);
+        sect.appendChild(selectList);
+        sect.appendChild(div);
+        sect.appendChild(mn_div);
+        sect.appendChild(btn);
+        main_parent.appendChild(sect);
+
+    }
+
+    function delete_rule(my_id) {
+        console.log(my_id)
+        var rule_id_del = String(my_id).replace("del", "rule");
+        console.log("rule_id_del", rule_id_del);
+        var parent_tag = "rule_create_" + String(my_id).split("_")[1];
+        d = document;
+        var ele = d.getElementById(rule_id_del);
+        var parentEle = d.getElementById(parent_tag);
+        parentEle.removeChild(ele);
+    }
+
+    function add_cond(cond_id) {
+        console.log(cond_id);
+        var parent_div = String(cond_id).replace("_btn", "");
+        console.log("parent_div", parent_div);
+        var rule_id = String(cond_id).replace("rule_create_btn_", "");
+        d = document.getElementById(parent_div);
+        var ele_len = d.getElementsByClassName("rule").length + 1;
+        var div1 = document.createElement('div');
+        div1.name = "rule";
+        div1.className = "rule";
+        div1.id = "rule_" + String(rule_id) + "_" + String(ele_len);
+        var div2 = document.createElement('div');
+        div2.className = "textarea";
+        var textarea1 = document.createElement('textarea');
+        textarea1.id = "data_" + String(rule_id) + "_" + String(ele_len);
+        div2.appendChild(textarea1);
+        var array = ["Generic", "Discharge Summary", "Pharmacy Bill", "Lab Report", "Pre Auth", "Bills", "Policy"];
+        var array_val = ["generic", "discharge summary", "pharmacy bill", "lab report", "pre auth", "bills", "policy"];
+        var selectList = document.createElement("select");
+        selectList.className = "js-select2";
+        selectList.id = "data_type_" + String(rule_id) + "_" + String(ele_len);
+        selectList.setAttribute("multiple", "multiple");
+        for (var i = 0; i < array.length; i++) {
+            var option = document.createElement("option");
+            option.value = array_val[i];
+            option.text = array[i];
+            selectList.appendChild(option);
+        }
+        $(document).ready(function () {
+            $(".js-select2").select2({
+                closeOnSelect: false,
+                placeholder: "Document Type",
+                allowClear: true,
+                tags: true
+            });
+        });
+        var del_btn = document.createElement('div');
+        del_btn.className = "delete";
+        del_btn.id = "del_" + String(rule_id) + "_" + String(ele_len);
+        // del_btn.onclick = delete_rule(this.id);
+        del_btn.setAttribute("onclick", "delete_rule(this.id)");
+        div1.appendChild(div2);
+        div1.appendChild(selectList);
+        div1.appendChild(del_btn);
+        document.getElementById(parent_div).appendChild(div1);
+    }
+
+
+</script>
+<script>
+    function final_appr() {
+        var my_sy = [];
+        var source_list = [];
+        var key_list = [];
+        var type_list = [];
+        var sec_len = document.getElementsByClassName("user-group").length;
+        // console.log("sec_len", sec_len);
+        for (var i = 0; i < sec_len; i++) {
+            var temp_list = [];
+            var temp_list_1 = [];
+            source_list.push(document.getElementById("doc_type_" + String(i + 1)).value);
+            var rule_len = document.getElementById("user_group_" + String(i + 1)).getElementsByClassName("rule").length;
+            // console.log("rule_len",rule_len);
+            for (var j = 0; j < rule_len; j++) {
+                temp_list.push(document.getElementById("data_" + String(i + 1) + "_" + String(j + 1)).value);
+                // temp_list_1.push(document.getElementById("data_type_" + String(i + 1) + "_" + String(j + 1)).value);
+                var select1 = document.getElementById("data_type_" + String(i + 1) + "_" + String(j + 1));
+                var selected1 = [];
+                for (var k = 0; k < select1.length; k++) {
+                    console.log(select1.options[k].value);
+                    if (select1.options[k].selected) {
+                        selected1.push(select1.options[k].value);
+                    }
+                    console.log("###################");
+                }
+                type_list.push(selected1)
+            }
+            key_list.push(temp_list);
+            // type_list.push(temp_list_1);
+
+        }
+        my_sy.push(source_list);
+        my_sy.push(key_list);
+        my_sy.push(type_list);
+        my_sy.push(document.getElementById("exampleInputUsername1").value);
+        var js_data = JSON.stringify(my_sy);
+        $.ajax({
+            type: 'POST',
+            url: '/configurator/final_create_rule',
+            data: js_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (data) {
+                showSuccessPopup();
+
+            }
+        });
+
+
+        var formData = new FormData();
+        formData.append('file', document.getElementById('myfile').files[0]);
+        formData.append('json_data', js_data);
+
+        $.ajax({
+            type: 'POST',
+            url: '/uploadPdf',  // This is the URL of the Flask API you created for file upload
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                console.log("data submitted successfully");
+            }
+        });
+
+
+    }
+
+
+    function showSuccessPopup() {
+    
+        var successPopup = document.createElement('div');
+        successPopup.innerHTML = 'Data Submitted Successfully ✅';
+    
+
+
+        var overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        overlay.style.zIndex = '9998';
+
+        document.body.appendChild(overlay);
+        
+        successPopup.style.position = 'fixed';
+        successPopup.style.top = '50%';
+        successPopup.style.left = '50%';
+        successPopup.style.transform = 'translate(-50%, -50%)';
+        successPopup.style.backgroundColor = '#29AB87';
+        successPopup.style.color = 'white';
+        successPopup.style.padding = '10px';
+        successPopup.style.borderRadius = '5px';
+        successPopup.style.zIndex = '9999';
+
+        document.body.appendChild(successPopup);
+    
+        setTimeout(function () {
+            successPopup.remove();
+            overlay.remove();
+        }, 1000);
+    }
+
+
+  </script>
+  </script>
+
+</script>
+
+</body>
+
+</html>

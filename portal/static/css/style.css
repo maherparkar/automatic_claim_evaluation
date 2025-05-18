@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+}
+
+
+.text-container{
+    font-size: medium;
+}
+
+body{
+    background-image: url(../images/background.jpg);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #f58220 -18%, #b02a30 127%);
+    padding: 10px; /* Adjust the padding as needed */
+    color: #fff; /* Change text color to your preference */
+}
+
+.logo-container {
+    margin-right: 20px; /* Adjust the margin as needed to create spacing between the logo and text */
+}
+
+img {
+    max-height: 50px; /* Set the max height for the logo image */
+}
+
+.centered-text {
+    text-align: center;
+    /* flex-grow: 1; Allow the text to take up available space and center it */
+    /* margin-right: 42rem; */
+}
+
+/* @media screen and (max-width: 1919px){
+    .centered-text {
+        margin-right: 42rem !important;
+    }
+}
+
+@media screen and (max-width: 1365px) {
+    .centered-text {
+        margin-right: 34rem !important;
+    }
+}
+
+@media centered-text and (max-width: 1279px) {
+    .tdClass {
+        margin-right: 34rem !important;
+    }
+} */
+
+
+
+.myFile {
+    /* border: 2px solid #ccc; */
+    display: inline-block;
+    padding: 15px 500px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    /* border-radius: 5px; */
+    /* border: 6px dashed #CA3433;  */
+    /* border: 1px solid #B3B7BE;  */
+    /* width: 100%; */
+}
+
+
+.centered-input {
+    text-align: center;
+    /* margin-top: 2%; */
+    /* margin-bottom: 2%; */
+}
+
+.centered-input input[type="file"] {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+
+.centreButtons{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+
+}
+
+
+.custom-file-label {
+    border: 2px solid #ccc;
+    display: inline-block;
+    padding: 15px 90px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    border: 6px dashed #CA3433;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+button.btn {
+    background-color: #CA3433;
+    color: white;
+    padding: 15px 31px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin-right: 3rem; */
+}
+
+
+button.de {
+    background-color: #CA3433;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.spinner-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

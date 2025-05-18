@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>iAssist Innovations Labs </title>
+
+    <!-- plugins:css -->
+
+    <link rel="stylesheet" href="/configurator/static/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/configurator/static/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/configurator/static/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/configurator/static/vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="/configurator/static/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/configurator/static/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/configurator/static/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/configurator/static/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/configurator/static/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+
+
+    <style>
+        .user-group {
+            border: 1px solid #B3B7BE;
+            padding: 16px;
+            border-radius: 4px;
+            width: 99%; /* 40% */
+            margin-bottom: 16px;
+            color: #616E81;
+        }
+
+        .user-group:hover {
+            background-color: #FFFAF0;
+        }
+
+        .rule {
+            display: flex;
+            margin: 0 0 16px 0;
+        }
+
+        .select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-size: 16px;
+            color: #25344B;
+            background: #fff;
+            border: 1px solid #B3B7BE;
+            border-radius: 4px;
+            padding: 0 48px 0 8px;
+            height: 32px;
+            margin: 0 16px 0 0;
+            outline: 0;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/ic-med_carretdown.svg);
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 12px;
+            flex-grow: 0;
+        }
+
+        .select:focus {
+            border: 1px solid #007DB6;
+        }
+
+        .textarea {
+            flex-grow: 1;
+            margin: 0 16px 0 0;
+        }
+
+        .textarea textarea {
+            display: inherit;
+            width: 100%;
+            resize: none;
+            font-size: 16px;
+            padding: 8px 12px 0;
+            height: 32px;
+            margin: 0;
+            border-radius: 4px;
+            border: 1px solid #B3B7BE;
+            color: #25344B;
+            outline: none;
+        }
+
+        .textarea textarea:focus {
+            border: 1px solid #007DB6;
+        }
+        /*  
+        .delete {
+            width: 20px;
+            display: inline-block;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_remcircle_icon.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            cursor: pointer;
+            background-size: 14px;
+        }
+        */
+
+        .delete {
+            width: 20px;
+            display: inline-block;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_remcircle_icon.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            cursor: pointer;
+        }
+        
+        @media screen and (max-width: 1920px) {
+            .delete {
+                background-size: 14px !important;
+            }
+        }
+        
+        @media screen and (max-width: 1280px) {
+            .delete {
+                background-size: 10px !important;
+            }
+        }
+        
+        @media screen and (max-width: 1366px) {
+            .delete {
+                background-size: 12px !important;
+            }
+        }
+        
+
+        .button-add {
+            border: 1px dashed #B3B7BE;
+            padding: 8px 16px 8px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #25344B;
+            border-radius: 4px;
+            background: transparent;
+            color: #007DB6;
+            cursor: pointer;
+            outline: 0;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_addcircle_icon.svg);
+            background-repeat: no-repeat;
+            background-position: 8px center;
+            background-size: 16px 16px;
+        }
+
+        .add-group {
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_personmulti_icon.svg);
+            width: 100%;
+            text-align: left;
+        }
+
+        .add-user {
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/11627/med_person_icon.svg);
+        }
+
+        .space {
+            height: 24px;
+        }
+
+        .button {
+            font-size: 18px;
+            background: transparent;
+            padding: 8px 16px;
+            min-width: 120px;
+            color: #616E81;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .button-primary {
+            background: #007DB6;
+            color: #fff;
+        }
+
+        .button-row {
+            text-align: right;
+        }
+
+        .or {
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .hide-set {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+            <div class="me-3">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+            <div>
+                <a class="navbar-brand brand-logo" href="index.html">
+                    <img src="/configurator/static/images/logo.png" alt="logo"/>
+                </a>
+                <a class="navbar-brand brand-logo-mini" href="index.html">
+                    <img src="/configurator/static/images/logo.png" alt="logo"/>
+                </a>
+            </div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-top">
+
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-bs-toggle="offcanvas">
+                <span class="mdi mdi-menu"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+
+
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/configurator">
+                        <i class="mdi mdi-grid-large menu-icon"></i>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/configurator/create_rule">
+                        <i class="menu-icon mdi mdi-card-text-outline"></i>
+                        <span class="menu-title">Create Rules</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/configurator/create_int">
+                        <i class="menu-icon mdi mdi-file-document"></i>
+                        <span class="menu-title">Create Interpretation</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/configurator/createPDF">
+                        <i class="menu-icon mdi mdi-file-document"></i>
+                        <span class="menu-title">Upload PDF</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/configurator/claim_details">
+                        <!-- <i class="menu-icon mdi mdi-file-document"></i> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M1 7h18v2H1zm4 4h14v2H5z"/></svg>
+                        <span class="menu-title" style="margin-left: 10px;" >Summary</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2 class="mb-4" style="text-align: center;" >Create Interpretation</h2>
+                                <div class="form-group">
+                                    <label style="font-size: larger;" for="exampleInputUsername1">Interpretation Name</label>
+                                    <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Interpretation Name" oninput="saveInputValue()">
+                                </div>
+                                
+
+
+                            <div style="display:flex;">
+
+                               
+                                <div id="main_parent">
+                                    <section class="user-group" id="user_group_1">
+
+                                        <div style="display: flex; justify-content:center;align-items:center;text-align:center;" >
+                                            <p>Select Type of Document:</p>
+                                        </div>
+
+                                        <!-- <div style="display: flex;justify-content:center;align-items:center;text-align:center;" > -->
+
+                                            <select name="doc_type" id="doc_type_1" class="select" style="width: 100%;" onchange="saveDocType(1)">
+                                                <!-- <option value="generic">Generic</option> -->
+                                                <option value="discharge summary">Discharge Summary</option>
+                                                <option value="pharmacy bill">Pharmacy Bill</option>
+                                                <option value="lab report">Lab Report</option>
+                                                <option value="pre auth">Pre Auth</option>
+                                                <option value="bills">Bills</option>
+                                                <option value="policy">Policy</option>
+                                            </select>
+
+                                        <!-- </div> -->
+                                        <div class="space"></div>
+                                        <div id="rule_create_1">
+                                            <div class="rule" name="rule" id="rule_1_1">
+                                                <div class="textarea">
+                                                    <textarea name="" id="data_1_1"></textarea>
+                                                </div>
+                                                <select name="" id="data_type_1_1" class="select">
+                                                    <option value="str">String</option>
+                                                    <option value="list">List</option>
+                                                    <option value="date">Date</option>
+                                                </select>
+
+                                                <div class="delete" id="del_1_1" onclick="delete_rule(this.id)"></div>
+
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                        <div id="new_content"></div>
+                                        <button id="rule_create_btn_1" class="button-add" onclick="add_cond(this.id, null)" style="width: 100%;">Add Condition</button>
+
+                                            Add Condition
+                                        </button>
+                                        
+                                        
+                                    </section>
+                                </div>
+                                
+                                <div id="main_parent_phar">
+                                    <section class="user-group" id="user_group_2">
+
+                                        <div style="display: flex; justify-content:center;align-items:center;text-align:center;" >
+                                            <p>Select Type of Document:</p>
+                                        </div>
+
+                                        <select name="doc_type" id="doc_type_2" class="select" style="width: 100%;" onchange="saveDocType(2)">
+                                            <!-- <option value="generic">Generic</option> -->
+                                            <option value="pharmacy bill">Pharmacy Bill</option>
+                                            <option value="discharge summary">Discharge Summary</option>
+                                            <option value="lab report">Lab Report</option>
+                                            <option value="pre auth">Pre Auth</option>
+                                            <option value="bills">Bills</option>
+                                            <option value="policy">Policy</option>
+                                        </select>
+                                        <div class="space"></div>
+                                        <div id="rule_create_2">
+                                            <div class="rule" name="rule" id="rule_1_2">
+                                                <div class="textarea">
+                                                    <textarea name="" id="data_2_1"></textarea>
+                                                </div>
+                                                <select name="" id="data_type_2_1" class="select">
+                                                    <option value="str">String</option>
+                                                    <option value="list">List</option>
+                                                    <option value="date">Date</option>
+                                                </select>
+
+                                                <div class="delete" id="del_2_1" onclick="delete_rule(this.id)"></div>
+                                            </div>
+                                        </div>
+
+                                        <button id="rule_create_btn_2" class="button-add" onclick="add_cond(this.id)" style="width: 100%;" >
+                                            Add Condition
+                                        </button>
+
+
+                                    </section>
+                                </div>
+
+                                <div id="main_parent_lab">
+                                    <section class="user-group" id="user_group_3">
+
+                                        <div style="display: flex; justify-content:center;align-items:center;text-align:center;" >
+                                            <p>Select Type of Document:</p>
+                                        </div>
+
+                                        <select name="doc_type" id="doc_type_3" class="select" style="width: 100%;" onchange="saveDocType(3)">
+                                            <!-- <option value="generic">Generic</option> -->
+                                            <option value="lab report">Lab Report</option>
+                                            <option value="discharge summary">Discharge Summary</option>
+                                            <option value="pharmacy bill">Pharmacy Bill</option>
+                                            <option value="pre auth">Pre Auth</option>
+                                            <option value="bills">Bills</option>
+                                            <option value="policy">Policy</option>
+                                        </select>
+                                        <div class="space"></div>
+                                        <div id="rule_create_3">
+                                            <div class="rule" name="rule" id="rule_1_3">
+                                                <div class="textarea">
+                                                    <textarea name="" id="data_3_1"></textarea>
+                                                </div>
+                                                <select name="" id="data_type_3_1" class="select">
+                                                    <option value="str">String</option>
+                                                    <option value="list">List</option>
+                                                    <option value="date">Date</option>
+                                                </select>
+
+                                                <div class="delete" id="del_3_1" onclick="delete_rule(this.id)"></div>
+                                            </div>
+                                        </div>
+
+                                        <button id="rule_create_btn_3" class="button-add" onclick="add_cond(this.id,null)" style="width: 100%;" >
+                                            Add Condition
+                                        </button>
+
+
+                                    </section>
+                                </div>
+
+
+                            </div>
+
+                            <div style="display: flex;">
+
+
+                                <div id="main_parent_preauth">
+                                    <section class="user-group" id="user_group_4">
+
+                                        <div style="display: flex; justify-content:center;align-items:center;text-align:center;" >
+                                            <p>Select Type of Document:</p>
+                                        </div>
+
+                                        <select name="doc_type" id="doc_type_4" class="select" style="width: 100%;" onchange="saveDocType(4)">
+                                            <!-- <option value="generic">Generic</option> -->
+                                            <option value="pre auth">Pre Auth</option>
+                                            <option value="discharge summary">Discharge Summary</option>
+                                            <option value="pharmacy bill">Pharmacy Bill</option>
+                                            <option value="lab report">Lab Report</option>
+                                            <option value="bills">Bills</option>
+                                            <option value="policy">Policy</option>
+                                        </select>
+                                        <div class="space"></div>
+                                        <div id="rule_create_4">
+                                            <div class="rule" name="rule" id="rule_1_4">
+                                                <div class="textarea">
+                                                    <textarea name="" id="data_4_1"></textarea>
+                                                </div>
+                                                <select name="" id="data_type_4_1" class="select">
+                                                    <option value="str">String</option>
+                                                    <option value="list">List</option>
+                                                    <option value="date">Date</option>
+                                                </select>
+
+                                                <div class="delete" id="del_4_1" onclick="delete_rule(this.id)"></div>
+                                            </div>
+                                        </div>
+
+                                        <button id="rule_create_btn_4" class="button-add" onclick="add_cond(this.id,null)" style="width: 100%;" >
+                                            Add Condition
+                                        </button>
+
+
+                                    </section>
+                                </div>
+                            
+                                <div id="main_parent_bills">
+                                    <section class="user-group" id="user_group_5">
+
+                                        <div style="display: flex; justify-content:center;align-items:center;text-align:center;" >  
+                                            <p>Select Type of Document:</p>
+                                        </div>
+
+                                        <select name="doc_type" id="doc_type_5" class="select" style="width: 100%;" onchange="saveDocType(5)">
+                                            <!-- <option value="generic">Generic</option> -->
+                                            <option value="bills">Bills</option>
+                                            <option value="discharge summary">Discharge Summary</option>
+                                            <option value="pharmacy bill">Pharmacy Bill</option>
+                                            <option value="lab report">Lab Report</option>
+                                            <option value="pre auth">Pre Auth</option>
+                                            <option value="policy">Policy</option>
+                                        </select>
+                                        <div class="space"></div>
+                                        <div id="rule_create_5">
+                                            <div class="rule" name="rule" id="rule_1_5">
+                                                <div class="textarea">
+                                                    <textarea name="" id="data_5_1"></textarea>
+                                                </div>
+                                                <select name="" id="data_type_5_1" class="select">
+                                                    <option value="str">String</option>
+                                                    <option value="list">List</option>
+                                                    <option value="date">Date</option>
+                                                </select>
+
+                                                <div class="delete" id="del_5_1" onclick="delete_rule(this.id)"></div>
+                                            </div>
+                                        </div>
+
+                                        <button id="rule_create_btn_5" class="button-add" onclick="add_cond(this.id,null)" style="width: 100%;" >
+                                            Add Condition
+                                        </button>
+
+
+                                    </section>
+                                </div>
+
+                                <div id="main_parent_policy">
+                                    <section class="user-group" id="user_group_6">
+
+                                        <div style="display: flex; justify-content:center;align-items:center;text-align:center;" >
+                                            <p>Select Type of Document:</p>
+                                        </div>
+
+                                        <select name="doc_type" id="doc_type_6" class="select" style="width: 100%;" onchange="saveDocType(6)">
+                                            <!-- <option value="generic">Generic</option> -->
+                                            <option value="policy">Policy</option>
+                                            <option value="discharge summary">Discharge Summary</option>
+                                            <option value="pharmacy bill">Pharmacy Bill</option>
+                                            <option value="lab report">Lab Report</option>
+                                            <option value="pre auth">Pre Auth</option>
+                                            <option value="bills">Bills</option>
+                                        </select>
+                                        <div class="space"></div>
+                                        <div id="rule_create_6">
+                                            <div class="rule" name="rule" id="rule_1_6">
+                                                <div class="textarea">
+                                                    <textarea name="" id="data_6_1"></textarea>
+                                                </div>
+                                                <select name="" id="data_type_6_1" class="select">
+                                                    <option value="str">String</option>
+                                                    <option value="list">List</option>
+                                                    <option value="date">Date</option>
+                                                </select>
+
+                                                <div class="delete" id="del_6_1" onclick="delete_rule(this.id)"></div>
+                                            </div>
+                                        </div>
+
+                                        <button id="rule_create_btn_6" class="button-add" onclick="add_cond(this.id,null)" style="width: 100%;" >
+                                            Add Condition
+                                        </button>
+
+
+                                    </section>
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <div>
+                                    <div id="main_parent_add_new">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                                <!-- <button class="button-add add-group mb-4" onclick="add_group()">Add another group of
+                                    users
+                                </button> -->
+                                <div style="display: flex; justify-content:center" >
+                                    <button id="x" class="button-add mb-3" onclick="add_group()">Add another group of
+                                        users
+                                    </button>
+                                </div>
+                                
+                                <div style="display: flex; justify-content:center">
+                                    <button class="btn btn-success" id="submit-btn" onclick="final_appr();">Submit</button>
+
+                                </div>
+                                
+                                <!-- <div class="row mt-4">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                    </div>
+
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+
+<!-- plugins:js -->
+<script src="/configurator/static/vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/configurator/static/vendors/chart.js/Chart.min.js"></script>
+<script src="/configurator/static/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="/configurator/static/vendors/progressbar.js/progressbar.min.js"></script>
+
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/configurator/static/js/off-canvas.js"></script>
+<script src="/configurator/static/js/hoverable-collapse.js"></script>
+<script src="/configurator/static/js/template.js"></script>
+<script src="/configurator/static/js/settings.js"></script>
+<script src="/configurator/static/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="/configurator/static/js/dashboard.js"></script>
+<script src="/configurator/static/js/Chart.roundedBarCharts.js"></script>
+<!-- End custom js for this page-->
+<script>
+
+
+    //var containerCounter = 1;
+    
+    function add_group() {
+
+        //var containerId = "container_" + containerCounter;
+        //var container = document.createElement('div');
+        //container.style.backgroundColor = "black";
+        //container.id = containerId;
+
+
+
+       var sec_len = document.getElementsByClassName("user-group").length + 1;
+       var main_parent = document.getElementById('main_parent_add_new');
+        
+       //var container = document.createElement('div');
+       
+       var sect = document.createElement('section');
+        sect.className = "user-group";
+        sect.id = "user_group_" + String(sec_len);
+    
+        var removeBtn = document.createElement('span');
+        removeBtn.className = "remove-button";
+        removeBtn.innerText = "𐄂";
+        removeBtn.style.cursor = "pointer";
+        removeBtn.style.position = "absolute";
+        removeBtn.style.right = "5%";
+        removeBtn.style.color = "red";
+        removeBtn.setAttribute("onclick", "remove_group('" + sect.id + "')");
+        sect.appendChild(removeBtn);
+
+
+        var p1 = document.createElement('p');
+        p1.innerText = "Select Type of Document:";
+
+        var array = ["Others", "Generic" ,"Discharge Summary", "Pharmacy Bill", "Lab Report", "Pre Auth", "Bills", "Policy"];
+        var array_val = ["others","generic" ,"discharge summary", "pharmacy bill", "lab report", "pre auth", "bills", "policy"];
+        
+        var selectList = document.createElement("select");
+        selectList.className = "select";
+        selectList.id = "doc_type_" + String(sec_len);
+        
+        for (var i = 0; i < array.length; i++) {
+            var option = document.createElement("option");
+            option.value = array_val[i];
+            option.text = array[i];
+            selectList.appendChild(option);
+        }
+        
+        var div = document.createElement('div');
+        div.className = "space";
+        
+        var mn_div = document.createElement('div');
+        mn_div.id = "rule_create_" + String(sec_len);
+        
+        var div1 = document.createElement('div');
+        div1.name = "rule";
+        div1.className = "rule";
+        div1.id = "rule_" + String(sec_len) + "_1";
+        
+        var div2 = document.createElement('div');
+        div2.className = "textarea";
+        
+        var textarea1 = document.createElement('textarea');
+        textarea1.id = "data_" + String(sec_len) + "_1";
+        div2.appendChild(textarea1);
+        
+        var array1 = ["String", "List", "Date"];
+        var array_val1 = ["str", "list", "date"];
+        
+        var selectList1 = document.createElement("select");
+        selectList1.className = "select";
+        selectList1.id = "data_type_" + String(sec_len) + "_1";
+        
+        for (var i = 0; i < array1.length; i++) {
+            var option1 = document.createElement("option");
+            option1.value = array_val1[i];
+            option1.text = array1[i];
+            selectList1.appendChild(option1);
+        }
+        
+        var del_btn = document.createElement('div');
+        del_btn.className = "delete";
+        del_btn.id = "del_" + String(sec_len) + "_1";
+        del_btn.setAttribute("onclick", "delete_rule(this.id)");
+        
+        div1.appendChild(div2);
+        div1.appendChild(selectList1);
+        div1.appendChild(del_btn);
+        
+        mn_div.appendChild(div1);
+        
+        var btn = document.createElement('button');
+        btn.className = "button-add";
+        btn.id = "rule_create_btn_" + String(sec_len);
+        btn.setAttribute("onclick", "add_cond(this.id)");
+        btn.innerText = "Add Condition";
+        
+        sect.appendChild(p1);
+
+        /*  
+        var removeBtn = document.createElement('span');
+        removeBtn.className = "remove-button";
+        removeBtn.innerText = "x";
+        removeBtn.style.cursor = "pointer";
+       removeBtn.style.position = "absolute";
+        //removeBtn.style.top = "10px";
+        //removeBtn.style.right = "100px";
+        removeBtn.setAttribute("onclick", "remove_group('" + sect.id + "')");
+        sect.appendChild(removeBtn);
+        */
+
+        sect.appendChild(selectList);
+        sect.appendChild(div);
+        sect.appendChild(mn_div);
+        sect.appendChild(btn);
+        
+        //container.appendChild(sect);
+        //containerCounter++;
+
+        //container.appendChild(sect);
+        //document.body.appendChild(container);
+
+        main_parent.appendChild(sect);
+        // saveState();
+    }
+    
+    function remove_group(groupId) {
+        var elementToRemove = document.getElementById(groupId);
+        if (elementToRemove) {
+            elementToRemove.remove();
+        }
+    }
+
+    function delete_rule(ruleId, textareaId) {
+    console.log("Deleting rule with ID:", ruleId, "and textarea ID:", textareaId);
+    var ruleToRemove = document.getElementById(ruleId);
+    if (ruleToRemove) {
+        console.log("Rule found. Removing from DOM...");
+        ruleToRemove.remove();
+
+        // Remove data from local storage
+        localStorage.removeItem(textareaId);
+        console.log("Data removed from local storage for textarea:", textareaId);
+
+        // Add logic to saveState if needed
+    } else {
+        console.error("Rule not found with ID: " + ruleId);
+    }
+}
+
+
+
+    
+
+    function add_cond(cond_id, parentIndex) {
+    console.log("condition", cond_id)
+    var parent_div = String(cond_id).replace("_btn", "");
+    var rule_id = String(cond_id).replace("rule_create_btn_", "");
+    d = document.getElementById(parent_div);
+    if (!d) {
+        console.error("Element with ID '" + parent_div + "' not found.");
+        return;
+    }
+
+    // Check if parentIndex is provided and an existing rule should be updated
+    var existingRule = parentIndex ? document.getElementById(`rule_${rule_id}_${parentIndex}`) : null;
+    console.log("chek existingrule", existingRule)
+
+    var ele_len;
+    if (existingRule) {
+        ele_len = parentIndex; // Use the provided parentIndex for an existing rule
+    } else {
+        ele_len = d.getElementsByClassName("rule").length + 1;
+    }
+
+    var div1 = existingRule || document.createElement('div');
+    div1.name = "rule";
+    div1.className = "rule";
+    div1.id = "rule_" + String(rule_id) + "_" + String(ele_len);
+
+    if (!existingRule) {
+        var div2 = document.createElement('div');
+        div2.className = "textarea";
+        var textarea1 = document.createElement('textarea');
+        textarea1.id = "data_" + String(rule_id) + "_" + String(ele_len);
+        console.log("check text area length", textarea1.id)
+        div2.appendChild(textarea1);
+
+        var array = ["String", "List", "Date"];
+        var array_val = ["str", "list", "date"];
+        var selectList = document.createElement("select");
+        selectList.className = "select";
+        selectList.id = "data_type_" + String(rule_id) + "_" + String(ele_len);
+        for (var i = 0; i < array.length; i++) {
+            var option = document.createElement("option");
+            option.value = array_val[i];
+            option.text = array[i];
+            selectList.appendChild(option);
+        }
+
+        var del_btn = document.createElement('div');
+        del_btn.className = "delete";
+        del_btn.id = "del_" + String(rule_id) + "_" + String(ele_len);
+        del_btn.setAttribute("onclick", `delete_rule('${div1.id}','${textarea1.id}')`);
+
+        div1.appendChild(div2);
+        div1.appendChild(selectList);
+        div1.appendChild(del_btn);
+    }
+
+    // Add or update the rule in the DOM
+    if (!existingRule) {
+        document.getElementById(parent_div).appendChild(div1);
+    }
+
+    // saveState();
+}
+
+
+
+
+</script>
+<script>
+
+    function final_appr() {
+        var my_sy = [];
+        var source_list = [];
+        var key_list = [];
+        var type_list = [];
+        var sec_len = document.getElementsByClassName("user-group").length;
+        // console.log("sec_len", sec_len);
+        for (var i = 0; i < sec_len; i++) {
+            var temp_list = [];
+            var temp_list_1 = [];
+            source_list.push(document.getElementById("doc_type_" + String(i + 1)).value);
+            var rule_len = document.getElementById("user_group_" + String(i + 1)).getElementsByClassName("rule").length;
+            // console.log("rule_len",rule_len);
+        
+            for (var j = 0; j < rule_len; j++) {
+                //console.log("Trying to access element with ID:", "data_" + String(i + 1) + "_" + String(j + 1));
+                var element = document.getElementById("data_" + String(i + 1) + "_" + String(j + 1))
+                var element1 = document.getElementById("data_type_" + String(i + 1) + "_" + String(j + 1))
+                if (element !== null && element1 !== null  ) {
+                    temp_list.push(element.value);
+                    temp_list_1.push(element1.value);
+                } else {
+                    console.error("Element not found:", "data_" + String(i + 1) + "_" + String(j + 1));
+                }
+                
+               // temp_list.push(document.getElementById("data_" + String(i + 1) + "_" + String(j + 1)).value);
+                //temp_list_1.push(document.getElementById("data_type_" + String(i + 1) + "_" + String(j + 1)).value);
+            }
+            key_list.push(temp_list);
+            type_list.push(temp_list_1);
+            
+        }
+        
+        my_sy.push(source_list);
+        my_sy.push(key_list);
+        my_sy.push(type_list);
+        my_sy.push(document.getElementById("exampleInputUsername1").value);
+        var js_data = JSON.stringify(my_sy);
+        var x = document.getElementById("exampleInputUsername1").value;
+        $.ajax({
+            type: 'POST',
+            url: '/configurator/final_create_int',
+            data: js_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function (data) {
+                console.log("the data in the post req -> " , data.ref_id )
+                let refIdForBackendReq = data.ref_id;
+                showSuccessPopup();
+                fetchDataAndPopulate();
+            }
+        });
+        
+    }
+
+
+    function showSuccessPopup() {
+    
+        var successPopup = document.createElement('div');
+        successPopup.innerHTML = 'Data Submitted Successfully ✅';
+    
+
+
+        var overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        overlay.style.zIndex = '9998';
+
+        document.body.appendChild(overlay);
+        
+        successPopup.style.position = 'fixed';
+        successPopup.style.top = '50%';
+        successPopup.style.left = '50%';
+        successPopup.style.transform = 'translate(-50%, -50%)';
+        successPopup.style.backgroundColor = '#29AB87';
+        successPopup.style.color = 'white';
+        successPopup.style.padding = '10px';
+        successPopup.style.borderRadius = '5px';
+        successPopup.style.zIndex = '9999';
+
+        document.body.appendChild(successPopup);
+    
+        setTimeout(function () {
+            successPopup.remove();
+            overlay.remove();
+        }, 1000);
+    }
+
+
+    function saveDataToLocalStorage(data) {
+        localStorage.setItem('dataKey', JSON.stringify(data));
+    }
+    
+    // Function to get data from localStorage
+    function getDataFromLocalStorage() {
+        const storedData = localStorage.getItem('dataKey');
+        return storedData ? JSON.parse(storedData) : null;
+    }
+
+
+    function fetchDataAndPopulate() {
+    const interpretationName = document.getElementById("exampleInputUsername1").value;
+
+    $.ajax({
+        type: 'GET',
+        url: `/configurator/get_data`,
+        data: {
+            "refIdForBackendReq": "onlysinglerefid",
+        },
+        success: function (data) {
+            console.log(data, "lets see dat");
+            for (let key in data) {
+                console.log(key, "please check key");
+                if (data.hasOwnProperty(key) && key.startsWith("data_")) {
+                    const docProperties = Object.entries(data[key]);
+                    console.log("set properties here", docProperties);
+
+                    if (docProperties.length > 0) {
+                        for (let i = 0; i < docProperties.length; i++) {
+                            const [docKey, docValue] = docProperties[i];
+
+                            localStorage.setItem(`${key}_${i + 1}`, docKey);
+
+                            const elementId = `${key}_${i + 1}`;
+                            let textArea = document.getElementById(elementId);
+
+                            if (!textArea) {
+                                // If the element doesn't exist, create it dynamically
+                                textArea = document.createElement("textarea");
+                                textArea.id = elementId;
+
+                                // Assuming you have a container element to append the new element
+                                const container = document.getElementById("yourContainerId");
+                                // container.appendChild(textArea);
+                            }
+
+                            textArea.value = docKey;
+                        }
+                    } else {
+                        console.error(`No fields found in ${key}.`);
+                        
+                    }
+                }
+            }
+        }
+    });
+}
+
+    
+      
+document.addEventListener('DOMContentLoaded', function () {
+    fetchDataAndPopulate();
+    console.log("DOMContentLoaded event triggered");
+
+    const keys = ['data_1', 'data_2', 'data_3', 'data_4', 'data_5', "data_6"];
+ 
+    keys.forEach((key, index) => {
+        let i = 1;
+        let storedKey;
+
+        // Get the main parent div based on the index
+        let mainParentDiv;
+        if (key === "data_1") {
+            mainParentDiv = document.getElementById(`main_parent`);
+        } else if (key === "data_2") {
+            mainParentDiv = document.getElementById(`main_parent_phar`);
+        } else if (key === "data_3") {
+            mainParentDiv = document.getElementById(`main_parent_lab`);
+        }else if (key === "data_4") {
+            mainParentDiv = document.getElementById(`main_parent_preauth`);
+        }else if (key === "data_5") {
+            mainParentDiv = document.getElementById(`main_parent_bills`);
+        }else if (key === "data_6") {
+            mainParentDiv = document.getElementById(`main_parent_policy`);
+        }
+
+        while ((storedKey = localStorage.getItem(`${key}_${i}`)) !== null) {
+            
+            const textareaId = `${key}_${i}`;
+            const selectId = `data_type_${index + 1}`;
+            const rule = `rule_${index + 1}_${i}`;
+            const del = `del_${index + 1}_${i}`;
+
+            console.log(`Checking ${textareaId} in local storage...`);
+
+            let textarea = document.getElementById(textareaId);
+            let select = document.getElementById(selectId);
+            let ruleContainer = document.getElementById(rule);
+            let delBtn = document.getElementById(del);
+
+            if (!textarea) {
+                console.log(`Creating ${textareaId} dynamically...`);
+                add_cond(`rule_create_btn_${index + 1}`, mainParentDiv);
+               
+            } else {
+                // Update existing text area
+                textarea.value = storedKey;
+                console.log(`Existing ${textareaId} updated.`);
+            }
+
+            i++;
+        }
+
+        // Call your existing add_cond function to add text areas and populate them
+        // add_cond(`rule_create_btn_${index + 1}`, mainParentDiv);
+    });
+});
+
+function saveInputValue() {
+    var inputElement = document.getElementById("exampleInputUsername1");
+    var inputValue = inputElement.value;
+
+    // Save the input value to localStorage
+    localStorage.setItem("exampleInputUsername1Value", inputValue);
+}
+
+// Function to set the input value on page load
+function setInputValueOnLoad() {
+    var inputElement = document.getElementById("exampleInputUsername1");
+
+    // Get the saved value from localStorage
+    var savedValue = localStorage.getItem("exampleInputUsername1Value");
+
+    // Set the input value if it was saved
+    if (savedValue !== null) {
+        inputElement.value = savedValue;
+    }
+}
+
+// Call the setInputValueOnLoad function when the page loads
+window.onload = setInputValueOnLoad();
+function saveDocType(docTypeId) {
+    var docTypeSelect = document.getElementById("doc_type_" + docTypeId);
+    var selectedDocType = docTypeSelect.options[docTypeSelect.selectedIndex].value;
+    
+    // Save the selected doc_type to localStorage
+    localStorage.setItem("selectedDocType_" + docTypeId, selectedDocType);
+}
+
+// Function to set the selected doc_type on page load
+function setDocTypeOnLoad(docTypeId) {
+    var docTypeSelect = document.getElementById("doc_type_" + docTypeId);
+    
+    // Get the saved doc_type from localStorage
+    var savedDocType = localStorage.getItem("selectedDocType_" + docTypeId);
+    
+    // Set the selected doc_type if it was saved
+    if (savedDocType) {
+        docTypeSelect.value = savedDocType;
+    }
+}
+
+// Call the setDocTypeOnLoad function for each dynamic doc_type when the page loads
+window.onload = function() {
+    // Set this to the total number of dynamic doc_type elements (in this case, 6)
+    var totalDocTypes = 6;
+    
+    for (var i = 1; i <= totalDocTypes; i++) {
+        setDocTypeOnLoad(i);
+    }
+};
+
+// function saveState() {
+//                 // Example: Save textarea values
+//                 const data_1_1_value = document.getElementById('data_1_1').value;
+//                 const data_1_2_value = document.getElementById('data_1_2').value;
+//                 localStorage.setItem('data_1_1', data_1_1_value);
+//                 localStorage.setItem('data_1_2', data_1_2_value);
+//                 console.log("save state enetred" ,data_1_2_value)
+//                 // Add more statements to save other relevant data as needed
+//             }
+// document.addEventListener("DOMContentLoaded", function () {
+//             // Your existing functions go here
+//             console.log("dom element enetreed" )
+//             // Function to save the current state to local storage
+            
+
+//             // Function to load the saved state from local storage
+//             function loadState() {
+//                 // Example: Load textarea values
+//                 const data_1_1_value = localStorage.getItem('data_1_1');
+//                 document.getElementById('data_1_1').value = data_1_1_value;
+//                 const data_1_2_value = localStorage.getItem('data_1_2');
+//                 console.log("data_1_2",da)
+//                 document.getElementById('data_1_2').value = data_1_2_value;
+                 
+
+//                 // Add more statements to load other relevant data as needed
+//             }
+
+//             // Load the saved state when the page loads
+//             loadState();
+//         });
+
+
+
+
+
+
+
+// localStorage.clear(); //-> to clear localStorage for debug purposes
+ 
+</script>
+
+</body>
+
+</html>
+
+
