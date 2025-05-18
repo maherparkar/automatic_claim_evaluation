@@ -24,13 +24,13 @@ DATA_OUTPUT = os.path.join(ROOT_DIR, "medical", "data_output")
 EXTRA_DATA =  os.path.join(DATA_OUTPUT,"extra_data")
 
 
-SECRET_KEY = "Kc5c3zTk'-3<&BdL:P92O{_(:-NkY+"
+SECRET_KEY = ""
 
 DB_USERNAME = "root"
 DB_PASSWORD = "root"
 DB_HOST = "localhost"
 DB_PORT = "3306"
-DB_NAME = "icici_uat_ida"
+DB_NAME = ""
 DB_CONNECTION_STRING = 'mysql+mysqlconnector://' + DB_USERNAME + ':' + DB_PASSWORD + '@' + DB_HOST + ':' + DB_PORT + '/' + DB_NAME
 
 EMAIL = ""
